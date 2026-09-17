@@ -103,8 +103,6 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    //Variables de control (No superar k procesos, tareas completadas (saber cuando terminar bucle),
-    //saber tareas a desbloquear y quitar dependencias
     
     int procesos_activos = 0;
     int tareas_completadas = 0;
@@ -117,9 +115,43 @@ int main(int argc, char* argv[]) {
     for (auto& tarea : docho){
         mapa_tareas[tarea.id_tarea] = &tarea;
     }
+    
 
     while (tareas_completadas < total_tareas){
-        
+        while (!listos.empty() && procesos_activos < K){
+            Planificador* actual = listos.front();
+            listos.pop();
+            
+            pid_t pid = fork();
+            if (pid == 0) {
+                cout << "[Hijo: " << getpid() << "] Ejecutando " << actual->nombre << " (ID: " << actual->id_tarea << ", " << actual->tiempo << " ms)" << endl; 
+                usleep(actual->tiempo * 1000);
+                cout << "[Hijo: " << getpid() << "] Finalizado " << actual->nombre << " (ID: " << actual->id_tarea << ")" << endl; 
+                exit(0);
+            }
+            else{
+                pid_to_tarea[pid] = actual->id_tarea;
+                procesos_activos++;
+            }
+        }
+
+        int status;
+        pid_t pid_muerto = wait(&status);
+        if (pid_muerto > 0) {
+            procesos_activos--;
+            tareas_completadas++;
+
+            string tarea_muerta = pid_to_tarea[pid_muerto];
+            Planificador* tarea_terminada = mapa_tareas[tarea_muerta];
+            cout << "[Padre] Terminó tarea: " << tarea_terminada->nombre << " (PID: " << pid_muerto << ")" << endl;
+
+            for (auto& sucesora : tarea_terminada->sucesoras) {
+                mapa_tareas[sucesora]->dep_counter--;
+                if (mapa_tareas[sucesora]->dep_counter == 0) {
+                    listos.push(mapa_tareas[sucesora]);
+                }
+            }
+        }
     }
     
 

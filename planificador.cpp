@@ -21,6 +21,7 @@ struct Planificador {
     vector<string> dependencias;
     vector<string> sucesoras;
     int dep_counter;
+    string insumo;
 };
 
 void leer_archivo(string archivo, vector<Planificador>& docho){
@@ -109,7 +110,7 @@ int main(int argc, char* argv[]) {
     int total_tareas = docho.size();
 
     unordered_map<pid_t, string> pid_to_tarea;
-
+    unordered_map<pid_t,int> pid_to_pipe;
     unordered_map<string,Planificador*> mapa_tareas;
     
     for (auto& tarea : docho){
@@ -121,16 +122,59 @@ int main(int argc, char* argv[]) {
         while (!listos.empty() && procesos_activos < K){
             Planificador* actual = listos.front();
             listos.pop();
-            
+
+            int fd[2];
+            if(pipe(fd) == -1){
+                perror("Error al crear pipe");
+                exit(1);
+            }
+
+            int fd_in[2];
+            if(pipe(fd_in) == -1){
+                perror("Error al crear pipe");
+                exit(1);
+            }
+
+            string insumos_previos = "";
+            for (auto& dep : actual->dependencias) {
+                insumos_previos += mapa_tareas[dep]->insumo + " ";
+            }
+
             pid_t pid = fork();
             if (pid == 0) {
+                close(fd[0]);
+                close(fd_in[1]);
+
+                if (!actual->dependencias.empty()) {
+                    char buf_in[200];
+                    ssize_t n = read(fd_in[0], buf_in, sizeof(buf_in) - 1);
+                    if (n > 0) {
+                        buf_in[n] = '\0';
+                        cout << "[Hijo: " << getpid() << "] " << actual->nombre 
+                             << " recibió insumos: " << buf_in << endl;
+                    }
+                }
+                close(fd_in[0]);
+
                 cout << "[Hijo: " << getpid() << "] Ejecutando " << actual->nombre << " (ID: " << actual->id_tarea << ", " << actual->tiempo << " ms)" << endl; 
                 usleep(actual->tiempo * 1000);
+                string insumo_completado= "listo_" + actual->nombre;
+                write(fd[1], insumo_completado.c_str(), insumo_completado.size());
+                close(fd[1]);
                 cout << "[Hijo: " << getpid() << "] Finalizado " << actual->nombre << " (ID: " << actual->id_tarea << ")" << endl; 
                 exit(0);
             }
             else{
+                close(fd[1]);
+                close(fd_in[0]);
+
+                if (!actual->dependencias.empty()) {
+                    write(fd_in[1], insumos_previos.c_str(), insumos_previos.size());
+                }
+                close(fd_in[1]);
+
                 pid_to_tarea[pid] = actual->id_tarea;
+                pid_to_pipe[pid] = fd[0];
                 procesos_activos++;
             }
         }
@@ -143,7 +187,21 @@ int main(int argc, char* argv[]) {
 
             string tarea_muerta = pid_to_tarea[pid_muerto];
             Planificador* tarea_terminada = mapa_tareas[tarea_muerta];
-            cout << "[Padre] Terminó tarea: " << tarea_terminada->nombre << " (PID: " << pid_muerto << ")" << endl;
+
+            int fd_lectura = pid_to_pipe[pid_muerto];
+            char buffer[200];
+
+            ssize_t bytes_leidos = read(fd_lectura, buffer, sizeof(buffer) - 1);
+            if(bytes_leidos > 0){
+                buffer[bytes_leidos] = '\0';
+                tarea_terminada->insumo = buffer;
+
+            }
+            close(fd_lectura);
+            pid_to_tarea.erase(pid_muerto);
+            pid_to_pipe.erase(pid_muerto);
+
+            cout << "[Padre] Terminó tarea: " << tarea_terminada->nombre << " (PID: " << pid_muerto << ") -> Insumo recibido: " << tarea_terminada->insumo << endl;
 
             for (auto& sucesora : tarea_terminada->sucesoras) {
                 mapa_tareas[sucesora]->dep_counter--;

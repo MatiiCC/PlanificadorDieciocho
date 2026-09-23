@@ -22,7 +22,21 @@ struct Planificador {
     vector<string> sucesoras;
     int dep_counter;
     string insumo;
+    bool cancelada = false;
 };
+
+void abortar_rama(Planificador* tarea, unordered_map<string, Planificador*>& mapa_tareas, int& tareas_canceladas){
+    for(auto& sucesora : tarea->sucesoras){
+        Planificador* suc = mapa_tareas[sucesora];
+        if(!suc->cancelada){
+            suc->cancelada = true;
+            tareas_canceladas++;
+            cout<< "[Alerta] Tarea Cancelada: " << suc->nombre << " (ID: " << suc->id_tarea << ")" << endl;
+            abortar_rama(suc, mapa_tareas, tareas_canceladas);
+        }
+    }
+}
+    
 
 void leer_archivo(string archivo, vector<Planificador>& docho){
     ifstream plan(archivo);
@@ -84,7 +98,7 @@ void leer_archivo(string archivo, vector<Planificador>& docho){
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
-        cerr << "Uso: " << argv[0] << " <plan.txt> <K limite>" << endl;
+        cerr << "Uso: " << argv[0] << " <plan_10000.txt> <K limite>" << endl;
         return 1;
     }
 
@@ -117,11 +131,15 @@ int main(int argc, char* argv[]) {
         mapa_tareas[tarea.id_tarea] = &tarea;
     }
     
+    int tareas_canceladas = 0;
 
-    while (tareas_completadas < total_tareas){
+    while (tareas_completadas + tareas_canceladas < total_tareas){
         while (!listos.empty() && procesos_activos < K){
             Planificador* actual = listos.front();
             listos.pop();
+            if(actual->cancelada){
+                continue;
+            }
 
             int fd[2];
             if(pipe(fd) == -1){
@@ -155,6 +173,14 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 close(fd_in[0]);
+                
+
+                /* //simular error en prender_carbon
+                if(actual->nombre == "prender_carbon"){
+                    cout<< "[Hijo : " << getpid() << "]" << " hubo un error al prender el carbon " << endl;
+                    exit(1);
+                }*/
+
 
                 cout << "[Hijo: " << getpid() << "] Ejecutando " << actual->nombre << " (ID: " << actual->id_tarea << ", " << actual->tiempo << " ms)" << endl; 
                 usleep(actual->tiempo * 1000);
@@ -189,7 +215,9 @@ int main(int argc, char* argv[]) {
             Planificador* tarea_terminada = mapa_tareas[tarea_muerta];
 
             int fd_lectura = pid_to_pipe[pid_muerto];
-            char buffer[200];
+            
+            if(WIFEXITED(status) && WEXITSTATUS(status) == 0){
+                char buffer[200];
 
             ssize_t bytes_leidos = read(fd_lectura, buffer, sizeof(buffer) - 1);
             if(bytes_leidos > 0){
@@ -197,9 +225,6 @@ int main(int argc, char* argv[]) {
                 tarea_terminada->insumo = buffer;
 
             }
-            close(fd_lectura);
-            pid_to_tarea.erase(pid_muerto);
-            pid_to_pipe.erase(pid_muerto);
 
             cout << "[Padre] Terminó tarea: " << tarea_terminada->nombre << " (PID: " << pid_muerto << ") -> Insumo recibido: " << tarea_terminada->insumo << endl;
 
@@ -209,6 +234,14 @@ int main(int argc, char* argv[]) {
                     listos.push(mapa_tareas[sucesora]);
                 }
             }
+            }
+            else{
+                cout<< "[Padre] La tarea " << tarea_terminada->nombre << " falló ( " << WEXITSTATUS(status) << " ) " << endl;
+                abortar_rama(tarea_terminada, mapa_tareas, tareas_canceladas);
+            }
+            close(fd_lectura);
+            pid_to_tarea.erase(pid_muerto);
+            pid_to_pipe.erase(pid_muerto);
         }
     }
     

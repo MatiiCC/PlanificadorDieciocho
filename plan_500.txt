@@ -1,0 +1,501 @@
+1 : elevar_volantin_1 : 17 : 
+2 : prender_carbon_2 : 27 : 
+3 : armar_choripan_3 : 16 : 1
+4 : calentar_empanadas_4 : 37 : 
+5 : comprar_pan_5 : 23 : 
+6 : jugar_trompo_6 : 11 : 5
+7 : picar_tomate_7 : 24 : 3
+8 : cortar_pimenton_8 : 10 : 2, 6
+9 : picar_tomate_9 : 31 : 
+10 : bailar_cueca_10 : 31 : 
+11 : cortar_cebolla_11 : 16 : 6
+12 : jugar_trompo_12 : 26 : 8, 9
+13 : asar_longaniza_13 : 34 : 
+14 : servir_terremoto_14 : 50 : 6
+15 : calentar_empanadas_15 : 22 : 1, 11
+16 : comprar_terremoto_16 : 28 : 2, 4, 14
+17 : cortar_cebolla_17 : 27 : 15
+18 : hacer_pebre_18 : 20 : 6
+19 : tirar_la_cuerda_19 : 27 : 14, 18
+20 : comprar_pan_20 : 48 : 13
+21 : hacer_anticuchos_21 : 25 : 
+22 : cortar_cebolla_22 : 27 : 15, 17, 18
+23 : comprar_terremoto_23 : 30 : 8, 20
+24 : comprar_terremoto_24 : 12 : 13, 15
+25 : comprar_pan_25 : 23 : 15, 19, 21
+26 : bailar_cueca_26 : 41 : 25
+27 : elevar_volantin_27 : 39 : 
+28 : armar_choripan_28 : 25 : 17, 21
+29 : hacer_anticuchos_29 : 47 : 23
+30 : cortar_cebolla_30 : 33 : 
+31 : armar_choripan_31 : 42 : 28
+32 : comprar_carne_32 : 17 : 
+33 : servir_mesa_33 : 37 : 24
+34 : cortar_cebolla_34 : 48 : 23, 27, 33
+35 : pagar_cuota_35 : 10 : 21
+36 : tirar_la_cuerda_36 : 44 : 31, 33
+37 : asar_costillar_37 : 17 : 
+38 : servir_mesa_38 : 39 : 
+39 : hacer_anticuchos_39 : 26 : 26, 32, 36
+40 : asar_longaniza_40 : 50 : 
+41 : elevar_volantin_41 : 42 : 28
+42 : hacer_pebre_42 : 20 : 39
+43 : decorar_ramada_43 : 10 : 35
+44 : prender_carbon_44 : 17 : 41, 42, 43
+45 : servir_terremoto_45 : 25 : 
+46 : calentar_empanadas_46 : 15 : 
+47 : poner_musica_47 : 14 : 34, 40, 44
+48 : armar_choripan_48 : 40 : 35, 37, 41
+49 : pagar_cuota_49 : 48 : 37
+50 : comprar_empanadas_50 : 22 : 41, 45
+51 : elevar_volantin_51 : 33 : 44
+52 : lavar_platos_52 : 17 : 
+53 : comprar_pan_53 : 31 : 
+54 : comprar_empanadas_54 : 24 : 39
+55 : comprar_pan_55 : 50 : 
+56 : comprar_pan_56 : 12 : 42, 49
+57 : comprar_terremoto_57 : 27 : 45
+58 : comprar_empanadas_58 : 18 : 52, 57
+59 : calentar_empanadas_59 : 40 : 
+60 : poner_musica_60 : 36 : 
+61 : asar_longaniza_61 : 37 : 52
+62 : lavar_platos_62 : 13 : 57
+63 : asar_longaniza_63 : 13 : 53
+64 : cortar_pimenton_64 : 16 : 
+65 : bailar_cueca_65 : 44 : 56
+66 : servir_mesa_66 : 27 : 64
+67 : comprar_pan_67 : 38 : 60, 65
+68 : asar_longaniza_68 : 13 : 61
+69 : encender_guirnaldas_69 : 10 : 57, 66, 68
+70 : servir_mesa_70 : 36 : 58
+71 : pagar_cuota_71 : 35 : 56, 58, 62
+72 : cortar_cebolla_72 : 26 : 61, 64, 69
+73 : picar_tomate_73 : 45 : 65
+74 : armar_choripan_74 : 22 : 
+75 : comprar_carne_75 : 47 : 60, 71
+76 : asar_costillar_76 : 13 : 
+77 : poner_musica_77 : 42 : 62, 64, 70
+78 : decorar_ramada_78 : 15 : 64, 72
+79 : comprar_pan_79 : 25 : 78
+80 : calentar_empanadas_80 : 25 : 65
+81 : jugar_trompo_81 : 15 : 75
+82 : calentar_empanadas_82 : 43 : 71
+83 : bailar_cueca_83 : 30 : 
+84 : cortar_cebolla_84 : 18 : 73
+85 : lavar_platos_85 : 30 : 70, 71, 84
+86 : lavar_platos_86 : 49 : 72, 79, 85
+87 : bailar_cueca_87 : 42 : 
+88 : hacer_pebre_88 : 14 : 77, 78
+89 : servir_mesa_89 : 38 : 78, 85
+90 : jugar_trompo_90 : 43 : 
+91 : encender_guirnaldas_91 : 45 : 
+92 : tirar_la_cuerda_92 : 16 : 78, 79, 81
+93 : asar_longaniza_93 : 45 : 
+94 : servir_terremoto_94 : 48 : 
+95 : asar_costillar_95 : 23 : 93
+96 : preparar_terremoto_96 : 42 : 95
+97 : pagar_cuota_97 : 13 : 
+98 : picar_tomate_98 : 27 : 
+99 : asar_costillar_99 : 18 : 88
+100 : servir_mesa_100 : 38 : 91
+101 : comprar_empanadas_101 : 10 : 
+102 : tomar_chicha_102 : 19 : 100
+103 : hacer_pebre_103 : 47 : 94
+104 : armar_choripan_104 : 12 : 103
+105 : cortar_pimenton_105 : 12 : 93, 100
+106 : comprar_terremoto_106 : 16 : 99
+107 : pagar_cuota_107 : 36 : 94, 95, 103
+108 : pagar_cuota_108 : 20 : 95, 99, 105
+109 : prender_carbon_109 : 21 : 99, 106
+110 : picar_tomate_110 : 25 : 
+111 : cortar_pimenton_111 : 16 : 96
+112 : pagar_cuota_112 : 40 : 
+113 : encender_guirnaldas_113 : 39 : 111
+114 : cortar_pimenton_114 : 24 : 
+115 : tirar_la_cuerda_115 : 22 : 104
+116 : pagar_cuota_116 : 14 : 105, 106, 111
+117 : decorar_ramada_117 : 35 : 115
+118 : comprar_empanadas_118 : 31 : 104, 105, 107
+119 : calentar_empanadas_119 : 26 : 
+120 : jugar_trompo_120 : 37 : 117
+121 : asar_costillar_121 : 37 : 114
+122 : asar_longaniza_122 : 34 : 110, 111
+123 : comprar_carne_123 : 37 : 
+124 : cortar_pimenton_124 : 44 : 120
+125 : hacer_anticuchos_125 : 22 : 111
+126 : tirar_la_cuerda_126 : 31 : 121
+127 : pagar_cuota_127 : 17 : 116, 120
+128 : servir_terremoto_128 : 36 : 124
+129 : servir_terremoto_129 : 45 : 
+130 : picar_tomate_130 : 34 : 129
+131 : servir_mesa_131 : 49 : 122
+132 : comprar_empanadas_132 : 10 : 120
+133 : picar_tomate_133 : 47 : 123
+134 : lavar_platos_134 : 38 : 122
+135 : decorar_ramada_135 : 40 : 131, 132
+136 : servir_mesa_136 : 15 : 
+137 : tirar_la_cuerda_137 : 50 : 123
+138 : encender_guirnaldas_138 : 25 : 126
+139 : cortar_pimenton_139 : 22 : 
+140 : comprar_carne_140 : 25 : 134, 137, 138
+141 : comprar_pan_141 : 39 : 136
+142 : calentar_empanadas_142 : 22 : 133, 134
+143 : cortar_cebolla_143 : 25 : 
+144 : tomar_chicha_144 : 10 : 141, 142
+145 : asar_longaniza_145 : 37 : 
+146 : cortar_pimenton_146 : 43 : 139
+147 : comprar_terremoto_147 : 17 : 144
+148 : lavar_platos_148 : 43 : 138, 142, 145
+149 : lavar_platos_149 : 49 : 142, 148
+150 : picar_tomate_150 : 45 : 137
+151 : hacer_anticuchos_151 : 40 : 148
+152 : comprar_terremoto_152 : 50 : 
+153 : ensartar_carne_153 : 43 : 141
+154 : preparar_terremoto_154 : 38 : 
+155 : servir_terremoto_155 : 25 : 
+156 : asar_costillar_156 : 44 : 
+157 : armar_choripan_157 : 24 : 144
+158 : tomar_chicha_158 : 23 : 
+159 : picar_tomate_159 : 31 : 150
+160 : comprar_carne_160 : 23 : 151, 157
+161 : calentar_empanadas_161 : 11 : 155, 158
+162 : cortar_cebolla_162 : 40 : 
+163 : hacer_pebre_163 : 29 : 161, 162
+164 : picar_tomate_164 : 44 : 157, 161
+165 : jugar_trompo_165 : 24 : 154
+166 : picar_tomate_166 : 41 : 
+167 : asar_costillar_167 : 35 : 159, 165
+168 : armar_choripan_168 : 49 : 167
+169 : cortar_cebolla_169 : 47 : 154
+170 : comprar_pan_170 : 37 : 
+171 : lavar_platos_171 : 21 : 
+172 : cortar_cebolla_172 : 30 : 
+173 : asar_costillar_173 : 31 : 162, 164
+174 : ensartar_carne_174 : 36 : 
+175 : comprar_pan_175 : 40 : 
+176 : comprar_empanadas_176 : 13 : 164, 166, 171
+177 : comprar_pan_177 : 12 : 165, 176
+178 : encender_guirnaldas_178 : 11 : 166
+179 : armar_choripan_179 : 40 : 173
+180 : bailar_cueca_180 : 39 : 177
+181 : hacer_pebre_181 : 20 : 177
+182 : tomar_chicha_182 : 17 : 169, 171
+183 : asar_longaniza_183 : 47 : 
+184 : servir_terremoto_184 : 46 : 175
+185 : cortar_cebolla_185 : 22 : 
+186 : tomar_chicha_186 : 50 : 
+187 : tomar_chicha_187 : 29 : 181, 184
+188 : asar_longaniza_188 : 46 : 178, 181
+189 : picar_tomate_189 : 33 : 
+190 : elevar_volantin_190 : 31 : 
+191 : picar_tomate_191 : 41 : 
+192 : hacer_pebre_192 : 50 : 184, 188
+193 : armar_choripan_193 : 37 : 
+194 : decorar_ramada_194 : 27 : 193
+195 : comprar_empanadas_195 : 40 : 193
+196 : hacer_anticuchos_196 : 47 : 
+197 : pagar_cuota_197 : 25 : 183, 186
+198 : lavar_platos_198 : 25 : 192, 197
+199 : tirar_la_cuerda_199 : 34 : 191
+200 : pagar_cuota_200 : 30 : 
+201 : bailar_cueca_201 : 32 : 190, 191
+202 : jugar_trompo_202 : 27 : 195
+203 : bailar_cueca_203 : 15 : 
+204 : picar_tomate_204 : 41 : 192
+205 : tomar_chicha_205 : 40 : 197
+206 : lavar_platos_206 : 11 : 
+207 : comprar_terremoto_207 : 35 : 196
+208 : tirar_la_cuerda_208 : 47 : 201
+209 : decorar_ramada_209 : 32 : 205
+210 : comprar_empanadas_210 : 31 : 202
+211 : preparar_terremoto_211 : 29 : 
+212 : asar_longaniza_212 : 22 : 208
+213 : comprar_empanadas_213 : 21 : 
+214 : hacer_anticuchos_214 : 40 : 
+215 : calentar_empanadas_215 : 43 : 201
+216 : encender_guirnaldas_216 : 22 : 
+217 : hacer_pebre_217 : 21 : 213
+218 : comprar_empanadas_218 : 18 : 
+219 : comprar_carne_219 : 45 : 
+220 : armar_choripan_220 : 50 : 206, 212
+221 : pagar_cuota_221 : 10 : 213
+222 : poner_musica_222 : 38 : 207
+223 : preparar_terremoto_223 : 40 : 
+224 : comprar_pan_224 : 35 : 218
+225 : elevar_volantin_225 : 13 : 
+226 : cortar_pimenton_226 : 46 : 212, 214, 225
+227 : comprar_empanadas_227 : 36 : 224
+228 : jugar_trompo_228 : 24 : 219, 220
+229 : lavar_platos_229 : 29 : 218, 220
+230 : calentar_empanadas_230 : 49 : 
+231 : hacer_anticuchos_231 : 16 : 219, 226, 230
+232 : preparar_terremoto_232 : 15 : 
+233 : servir_mesa_233 : 45 : 
+234 : prender_carbon_234 : 36 : 228
+235 : poner_musica_235 : 28 : 
+236 : servir_terremoto_236 : 28 : 222, 228
+237 : tirar_la_cuerda_237 : 24 : 232, 234, 236
+238 : calentar_empanadas_238 : 22 : 231
+239 : comprar_terremoto_239 : 19 : 225, 226, 237
+240 : comprar_carne_240 : 20 : 234, 236
+241 : encender_guirnaldas_241 : 46 : 227, 233, 240
+242 : tomar_chicha_242 : 29 : 231
+243 : decorar_ramada_243 : 44 : 229
+244 : jugar_trompo_244 : 12 : 234, 240
+245 : jugar_trompo_245 : 26 : 
+246 : comprar_terremoto_246 : 46 : 231
+247 : ensartar_carne_247 : 27 : 244
+248 : ensartar_carne_248 : 21 : 243
+249 : lavar_platos_249 : 27 : 
+250 : calentar_empanadas_250 : 37 : 242
+251 : comprar_pan_251 : 40 : 241
+252 : asar_costillar_252 : 16 : 242, 243
+253 : tomar_chicha_253 : 41 : 
+254 : cortar_cebolla_254 : 45 : 
+255 : comprar_pan_255 : 30 : 
+256 : asar_longaniza_256 : 35 : 241, 254
+257 : tirar_la_cuerda_257 : 44 : 242
+258 : bailar_cueca_258 : 43 : 255
+259 : poner_musica_259 : 50 : 244
+260 : bailar_cueca_260 : 27 : 259
+261 : servir_terremoto_261 : 38 : 247, 253
+262 : prender_carbon_262 : 50 : 250
+263 : tomar_chicha_263 : 20 : 248
+264 : comprar_empanadas_264 : 36 : 
+265 : encender_guirnaldas_265 : 17 : 251
+266 : elevar_volantin_266 : 19 : 262
+267 : servir_terremoto_267 : 42 : 258, 265
+268 : poner_musica_268 : 40 : 
+269 : comprar_empanadas_269 : 19 : 268
+270 : jugar_trompo_270 : 42 : 257, 268
+271 : comprar_pan_271 : 27 : 262, 269
+272 : asar_costillar_272 : 42 : 
+273 : prender_carbon_273 : 28 : 267, 271
+274 : calentar_empanadas_274 : 41 : 266, 267
+275 : poner_musica_275 : 32 : 272
+276 : comprar_empanadas_276 : 34 : 266
+277 : pagar_cuota_277 : 22 : 265, 268, 271
+278 : comprar_terremoto_278 : 36 : 
+279 : hacer_anticuchos_279 : 40 : 270, 276
+280 : cortar_cebolla_280 : 19 : 265
+281 : armar_choripan_281 : 42 : 267, 271, 279
+282 : pagar_cuota_282 : 38 : 
+283 : lavar_platos_283 : 10 : 274, 281
+284 : elevar_volantin_284 : 19 : 
+285 : cortar_pimenton_285 : 26 : 281
+286 : cortar_cebolla_286 : 15 : 281, 284
+287 : pagar_cuota_287 : 44 : 277
+288 : elevar_volantin_288 : 41 : 273, 282
+289 : comprar_pan_289 : 25 : 288
+290 : servir_terremoto_290 : 24 : 276, 281
+291 : ensartar_carne_291 : 50 : 277, 283
+292 : servir_mesa_292 : 29 : 277, 282, 289
+293 : comprar_carne_293 : 28 : 284
+294 : armar_choripan_294 : 25 : 288
+295 : tirar_la_cuerda_295 : 21 : 
+296 : comprar_pan_296 : 49 : 290, 291
+297 : comprar_terremoto_297 : 41 : 284, 285, 289
+298 : elevar_volantin_298 : 26 : 293
+299 : prender_carbon_299 : 39 : 286, 292, 294
+300 : comprar_pan_300 : 38 : 289, 294, 295
+301 : picar_tomate_301 : 26 : 290
+302 : bailar_cueca_302 : 34 : 288, 290
+303 : cortar_cebolla_303 : 46 : 292
+304 : tomar_chicha_304 : 28 : 
+305 : encender_guirnaldas_305 : 35 : 
+306 : calentar_empanadas_306 : 13 : 295, 298, 302
+307 : ensartar_carne_307 : 24 : 297
+308 : comprar_terremoto_308 : 50 : 
+309 : preparar_terremoto_309 : 18 : 308
+310 : elevar_volantin_310 : 12 : 302
+311 : comprar_carne_311 : 47 : 298
+312 : comprar_pan_312 : 28 : 303
+313 : servir_mesa_313 : 22 : 
+314 : comprar_empanadas_314 : 33 : 313
+315 : preparar_terremoto_315 : 20 : 
+316 : encender_guirnaldas_316 : 40 : 305, 306, 312
+317 : cortar_pimenton_317 : 17 : 303
+318 : armar_choripan_318 : 24 : 313, 314
+319 : cortar_cebolla_319 : 45 : 316
+320 : cortar_cebolla_320 : 10 : 
+321 : asar_longaniza_321 : 39 : 317
+322 : tirar_la_cuerda_322 : 26 : 320
+323 : elevar_volantin_323 : 33 : 
+324 : comprar_terremoto_324 : 40 : 
+325 : comprar_empanadas_325 : 30 : 311, 313, 320
+326 : elevar_volantin_326 : 39 : 315, 317, 321
+327 : asar_longaniza_327 : 18 : 
+328 : comprar_carne_328 : 29 : 314, 316, 327
+329 : comprar_empanadas_329 : 18 : 319
+330 : tirar_la_cuerda_330 : 44 : 326
+331 : hacer_anticuchos_331 : 19 : 317, 326
+332 : encender_guirnaldas_332 : 41 : 321
+333 : comprar_carne_333 : 33 : 
+334 : lavar_platos_334 : 25 : 320, 329
+335 : hacer_pebre_335 : 44 : 320, 325, 330
+336 : cortar_cebolla_336 : 27 : 
+337 : asar_longaniza_337 : 39 : 
+338 : bailar_cueca_338 : 50 : 323
+339 : comprar_carne_339 : 31 : 
+340 : armar_choripan_340 : 46 : 
+341 : encender_guirnaldas_341 : 45 : 
+342 : bailar_cueca_342 : 24 : 329
+343 : cortar_pimenton_343 : 48 : 
+344 : pagar_cuota_344 : 19 : 333, 337, 341
+345 : servir_mesa_345 : 17 : 330
+346 : armar_choripan_346 : 10 : 343
+347 : comprar_terremoto_347 : 47 : 334
+348 : preparar_terremoto_348 : 13 : 
+349 : picar_tomate_349 : 43 : 
+350 : comprar_pan_350 : 40 : 340
+351 : decorar_ramada_351 : 47 : 
+352 : decorar_ramada_352 : 24 : 337, 348, 349
+353 : pagar_cuota_353 : 43 : 348
+354 : prender_carbon_354 : 13 : 345, 352, 353
+355 : tirar_la_cuerda_355 : 16 : 354
+356 : lavar_platos_356 : 14 : 346, 350
+357 : armar_choripan_357 : 14 : 
+358 : jugar_trompo_358 : 50 : 354
+359 : asar_costillar_359 : 34 : 348, 351, 352
+360 : decorar_ramada_360 : 48 : 357
+361 : tomar_chicha_361 : 17 : 356, 358
+362 : comprar_empanadas_362 : 23 : 361
+363 : comprar_terremoto_363 : 36 : 355
+364 : cortar_cebolla_364 : 36 : 354, 355
+365 : asar_costillar_365 : 26 : 352
+366 : tirar_la_cuerda_366 : 40 : 
+367 : encender_guirnaldas_367 : 15 : 
+368 : asar_longaniza_368 : 33 : 353, 361
+369 : calentar_empanadas_369 : 45 : 364
+370 : asar_longaniza_370 : 36 : 365
+371 : ensartar_carne_371 : 37 : 356, 367
+372 : servir_terremoto_372 : 48 : 358
+373 : calentar_empanadas_373 : 42 : 
+374 : tirar_la_cuerda_374 : 40 : 
+375 : asar_longaniza_375 : 32 : 361, 365
+376 : ensartar_carne_376 : 27 : 373
+377 : picar_tomate_377 : 45 : 371, 375, 376
+378 : tirar_la_cuerda_378 : 45 : 
+379 : tirar_la_cuerda_379 : 27 : 
+380 : preparar_terremoto_380 : 29 : 365, 367, 370
+381 : pagar_cuota_381 : 19 : 372
+382 : comprar_pan_382 : 19 : 367, 368
+383 : hacer_anticuchos_383 : 43 : 
+384 : picar_tomate_384 : 39 : 374
+385 : servir_terremoto_385 : 30 : 379, 384
+386 : comprar_pan_386 : 13 : 
+387 : ensartar_carne_387 : 49 : 
+388 : comprar_pan_388 : 27 : 379
+389 : poner_musica_389 : 48 : 378
+390 : bailar_cueca_390 : 42 : 
+391 : picar_tomate_391 : 17 : 
+392 : tirar_la_cuerda_392 : 47 : 387
+393 : servir_terremoto_393 : 12 : 
+394 : jugar_trompo_394 : 13 : 
+395 : servir_terremoto_395 : 23 : 384, 392
+396 : servir_terremoto_396 : 30 : 
+397 : poner_musica_397 : 37 : 
+398 : cortar_cebolla_398 : 44 : 391, 397
+399 : encender_guirnaldas_399 : 32 : 
+400 : pagar_cuota_400 : 12 : 392
+401 : comprar_pan_401 : 30 : 395
+402 : cortar_cebolla_402 : 50 : 388
+403 : cortar_cebolla_403 : 11 : 390, 397, 400
+404 : lavar_platos_404 : 33 : 
+405 : pagar_cuota_405 : 16 : 
+406 : calentar_empanadas_406 : 35 : 397
+407 : pagar_cuota_407 : 29 : 395, 397
+408 : ensartar_carne_408 : 20 : 
+409 : elevar_volantin_409 : 17 : 397
+410 : ensartar_carne_410 : 32 : 408
+411 : elevar_volantin_411 : 19 : 
+412 : armar_choripan_412 : 26 : 
+413 : jugar_trompo_413 : 19 : 399, 408
+414 : servir_mesa_414 : 50 : 411
+415 : calentar_empanadas_415 : 47 : 414
+416 : calentar_empanadas_416 : 50 : 406, 411, 414
+417 : asar_costillar_417 : 19 : 409
+418 : lavar_platos_418 : 50 : 407
+419 : calentar_empanadas_419 : 13 : 405
+420 : servir_terremoto_420 : 39 : 405
+421 : hacer_pebre_421 : 28 : 
+422 : pagar_cuota_422 : 15 : 415
+423 : cortar_cebolla_423 : 39 : 420
+424 : hacer_anticuchos_424 : 12 : 421
+425 : calentar_empanadas_425 : 22 : 417
+426 : decorar_ramada_426 : 19 : 412, 418, 423
+427 : encender_guirnaldas_427 : 31 : 413, 420, 422
+428 : servir_mesa_428 : 12 : 
+429 : lavar_platos_429 : 38 : 423
+430 : servir_mesa_430 : 33 : 419
+431 : cortar_cebolla_431 : 36 : 425, 426
+432 : comprar_carne_432 : 50 : 418
+433 : asar_costillar_433 : 16 : 424
+434 : servir_terremoto_434 : 26 : 428, 429
+435 : pagar_cuota_435 : 19 : 429
+436 : tirar_la_cuerda_436 : 19 : 425, 431, 432
+437 : tirar_la_cuerda_437 : 35 : 
+438 : tomar_chicha_438 : 15 : 429
+439 : elevar_volantin_439 : 31 : 434, 435
+440 : encender_guirnaldas_440 : 43 : 
+441 : tirar_la_cuerda_441 : 37 : 426
+442 : hacer_pebre_442 : 29 : 
+443 : bailar_cueca_443 : 31 : 431, 435, 441
+444 : armar_choripan_444 : 19 : 
+445 : pagar_cuota_445 : 16 : 438
+446 : encender_guirnaldas_446 : 43 : 
+447 : asar_costillar_447 : 49 : 
+448 : cortar_cebolla_448 : 19 : 
+449 : encender_guirnaldas_449 : 49 : 436, 445
+450 : lavar_platos_450 : 12 : 445
+451 : hacer_anticuchos_451 : 25 : 440, 445, 448
+452 : hacer_anticuchos_452 : 38 : 
+453 : comprar_terremoto_453 : 29 : 441, 445, 450
+454 : hacer_pebre_454 : 46 : 443, 446, 451
+455 : ensartar_carne_455 : 34 : 446
+456 : servir_mesa_456 : 22 : 443, 454
+457 : preparar_terremoto_457 : 13 : 455
+458 : hacer_pebre_458 : 45 : 451, 454, 456
+459 : pagar_cuota_459 : 17 : 
+460 : ensartar_carne_460 : 20 : 
+461 : decorar_ramada_461 : 19 : 447, 449
+462 : encender_guirnaldas_462 : 38 : 447, 461
+463 : picar_tomate_463 : 13 : 453
+464 : comprar_terremoto_464 : 34 : 449, 452, 454
+465 : asar_costillar_465 : 16 : 455, 460
+466 : cortar_pimenton_466 : 19 : 
+467 : servir_terremoto_467 : 40 : 454
+468 : ensartar_carne_468 : 40 : 453
+469 : comprar_pan_469 : 11 : 
+470 : encender_guirnaldas_470 : 19 : 466
+471 : jugar_trompo_471 : 43 : 468
+472 : servir_terremoto_472 : 25 : 457
+473 : comprar_terremoto_473 : 36 : 467
+474 : lavar_platos_474 : 14 : 
+475 : poner_musica_475 : 48 : 470
+476 : decorar_ramada_476 : 46 : 
+477 : armar_choripan_477 : 28 : 471
+478 : hacer_pebre_478 : 25 : 465
+479 : tirar_la_cuerda_479 : 15 : 469
+480 : comprar_pan_480 : 43 : 477
+481 : decorar_ramada_481 : 45 : 
+482 : pagar_cuota_482 : 40 : 
+483 : cortar_cebolla_483 : 33 : 
+484 : prender_carbon_484 : 32 : 472, 474
+485 : hacer_anticuchos_485 : 50 : 
+486 : calentar_empanadas_486 : 31 : 
+487 : hacer_pebre_487 : 44 : 482
+488 : servir_mesa_488 : 39 : 475, 480, 483
+489 : cortar_pimenton_489 : 18 : 
+490 : ensartar_carne_490 : 39 : 
+491 : bailar_cueca_491 : 12 : 476, 490
+492 : asar_costillar_492 : 29 : 490
+493 : comprar_empanadas_493 : 40 : 
+494 : ensartar_carne_494 : 22 : 
+495 : pagar_cuota_495 : 13 : 484, 485
+496 : asar_longaniza_496 : 33 : 487
+497 : hacer_anticuchos_497 : 38 : 487, 488
+498 : servir_mesa_498 : 41 : 488
+499 : cortar_pimenton_499 : 43 : 
+500 : comprar_pan_500 : 37 : 
+

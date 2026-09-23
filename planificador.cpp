@@ -48,7 +48,18 @@ void leer_archivo(string archivo, vector<Planificador>& docho){
         stringstream ss(linea);
         char puntos;
         
-        ss >> p.id_tarea >> puntos >> p.nombre >> puntos >> p.tiempo >> puntos;
+        ss >> p.id_tarea >> puntos >> p.nombre >> puntos;
+
+        string tiempo;
+        ss >> tiempo;
+
+        if (tiempo == ":"){
+            p.tiempo = 100 + (rand()%4901);
+
+        } else {
+            p.tiempo = stoi(tiempo);
+            ss >> puntos;
+        }
 
         string dependencia;
         while (ss >> dependencia) {
@@ -118,7 +129,7 @@ void llegada_seremi(int sig){
 
 int main(int argc, char* argv[]) {
     if (argc != 3) {
-        cerr << "Uso: " << argv[0] << " <plan_10000.txt> <K limite>" << endl;
+        cerr << "Uso: " << argv[0] << " <plan.txt> <K limite>" << endl;
         return 1;
     }
 
@@ -127,6 +138,7 @@ int main(int argc, char* argv[]) {
 
     cout << "Iniciando Planificador con " << archivo_plan << " y concurrencia máxima K = " << K << endl;
 
+    srand(time(NULL));
     struct sigaction sa;
     sa.sa_handler = llegada_seremi;
     sigemptyset(&sa.sa_mask);

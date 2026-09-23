@@ -96,6 +96,26 @@ void leer_archivo(string archivo, vector<Planificador>& docho){
 
 }
 
+vector<pid_t> pid_activos;
+
+void llegada_seremi(int sig){
+    (void)sig;
+    cout << "--------------------------- " << endl;
+    cout << "[SEREMI] ¡Llegó el seremi! Se cancelan todas las tareas." << endl;
+    cout << "--------------------------- " << endl;
+
+    for(pid_t pid : pid_activos){
+        kill(pid, SIGTERM);
+        cout<< "[SEREMI] Se cancela tarea con pid " << pid << endl;
+    }
+
+    while(waitpid(-1,NULL,WNOHANG) > 0);
+
+    cout<< "[SEREMI] Fonda cancelada por INSPECCIÓN"<< endl;
+    cout << "--------------------------- " << endl;
+    exit(0);
+}
+
 int main(int argc, char* argv[]) {
     if (argc != 3) {
         cerr << "Uso: " << argv[0] << " <plan_10000.txt> <K limite>" << endl;
@@ -105,8 +125,13 @@ int main(int argc, char* argv[]) {
     string archivo_plan = argv[1];
     int K = stoi(argv[2]);
 
-    cout << "Iniciando Planificador con " << archivo_plan 
-        << " y concurrencia máxima K = " << K << endl;
+    cout << "Iniciando Planificador con " << archivo_plan << " y concurrencia máxima K = " << K << endl;
+
+    struct sigaction sa;
+    sa.sa_handler = llegada_seremi;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = 0;
+    sigaction(SIGINT, &sa, NULL);
 
     vector<Planificador> docho;
     leer_archivo(archivo_plan, docho);
@@ -160,6 +185,8 @@ int main(int argc, char* argv[]) {
 
             pid_t pid = fork();
             if (pid == 0) {
+
+                signal(SIGINT, SIG_IGN);
                 close(fd[0]);
                 close(fd_in[1]);
 
@@ -201,6 +228,7 @@ int main(int argc, char* argv[]) {
 
                 pid_to_tarea[pid] = actual->id_tarea;
                 pid_to_pipe[pid] = fd[0];
+                pid_activos.push_back(pid);
                 procesos_activos++;
             }
         }
@@ -242,6 +270,13 @@ int main(int argc, char* argv[]) {
             close(fd_lectura);
             pid_to_tarea.erase(pid_muerto);
             pid_to_pipe.erase(pid_muerto);
+            for (size_t i = 0; i < pid_activos.size(); i++) {
+                    if (pid_activos[i] == pid_muerto) {
+                        pid_activos.erase(pid_activos.begin() + i);
+                        break;
+                    }
+                }
+
         }
     }
     

@@ -72,6 +72,7 @@ void leer_archivo(string archivo, vector<Planificador>& docho){
         
         p.dep_counter = p.dependencias.size();  
 
+        /*
         cout << "-----------------------------" << endl;
         cout << "ID: " << p.id_tarea << endl;
         cout << "Nombre: " << p.nombre << endl;
@@ -83,28 +84,33 @@ void leer_archivo(string archivo, vector<Planificador>& docho){
         cout << endl;
         cout << "Dependencias Counter: " << p.dep_counter << endl;
         cout << endl;
+        */
 
         docho.push_back(p);
     }
 
-    for (auto& tarea : docho) {
-            for (const string& id_dep : tarea.dependencias) {
-                for (auto& padre : docho) {
-                    if (padre.id_tarea == id_dep) {
-                        padre.sucesoras.push_back(tarea.id_tarea);
-                    }
-                }
-            }
-        }
-    
-        for(auto& tarea : docho){
-            cout << "Sucesoras de " << tarea.id_tarea << ": ";
-            for(auto& sucesora : tarea.sucesoras){
-                cout << sucesora << " ";
-            }
-            cout << endl;
-        }
+    unordered_map<string, int> pos_tarea;
+    for (size_t i = 0; i < docho.size(); i++) {
+        pos_tarea[docho[i].id_tarea] = i;
+    }
 
+    for (auto& tarea : docho) {
+        for (const string& id_dep : tarea.dependencias) {
+            if (pos_tarea.find(id_dep) != pos_tarea.end()) {
+                docho[pos_tarea[id_dep]].sucesoras.push_back(tarea.id_tarea);
+            }
+        }
+    }
+
+    /*
+    for(auto& tarea : docho){
+        cout << "Sucesoras de " << tarea.id_tarea << ": ";
+        for(auto& sucesora : tarea.sucesoras){
+            cout << sucesora << " ";
+        }
+        cout << endl;
+    }
+    */
 }
 
 vector<pid_t> pid_activos;
@@ -120,7 +126,9 @@ void llegada_seremi(int sig){
         cout<< "[SEREMI] Se cancela tarea con pid " << pid << endl;
     }
 
-    while(waitpid(-1,NULL,WNOHANG) > 0);
+    for(pid_t pid : pid_activos){
+        waitpid(pid, NULL, 0);
+    }
 
     cout<< "[SEREMI] Fonda cancelada por INSPECCIÓN"<< endl;
     cout << "--------------------------- " << endl;
@@ -203,7 +211,7 @@ int main(int argc, char* argv[]) {
                 close(fd_in[1]);
 
                 if (!actual->dependencias.empty()) {
-                    char buf_in[200];
+                    char buf_in[4096];
                     ssize_t n = read(fd_in[0], buf_in, sizeof(buf_in) - 1);
                     if (n > 0) {
                         buf_in[n] = '\0';
@@ -245,6 +253,10 @@ int main(int argc, char* argv[]) {
             }
         }
 
+        if (procesos_activos == 0 && listos.empty()) {
+            break;
+        }
+
         int status;
         pid_t pid_muerto = wait(&status);
         if (pid_muerto > 0) {
@@ -257,7 +269,7 @@ int main(int argc, char* argv[]) {
             int fd_lectura = pid_to_pipe[pid_muerto];
             
             if(WIFEXITED(status) && WEXITSTATUS(status) == 0){
-                char buffer[200];
+                char buffer[4096];
 
             ssize_t bytes_leidos = read(fd_lectura, buffer, sizeof(buffer) - 1);
             if(bytes_leidos > 0){

@@ -33,6 +33,9 @@ make
 make clean
 ```
 
+### Simular fallas (Aislamiento de Errores):
+Para simular una falla en una actividad, se puede descomentar el bloque de simulacion de error en las lineas 225-229 de planificador.cpp (por ejemplo, para la tarea prender_carbon) y volver a compilar con make.
+
 ---
 
 ## 3. Estructura y Funciones Implementadas
